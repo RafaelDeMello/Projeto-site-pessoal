@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!---google fontes-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap" rel="stylesheet">
+  <!---google fonts-->
+  <script defer src="app.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Portfóllio</title>
+</head>
+
+<body>
+  <div class="menu">
+    <nav class="Menu">
+      <h2 class="portifolio">Port<span>fólio</span></h2>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#Sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+      </ul>
+      <a href="#contato"><button class="contato-menu">Contato</button></a>
+    </nav>
+  </div>
+  <div class="btn-abrir-menu" id="btn-menu">
+    <img src="img/menuhamburguer-removebg-preview.png" alt="">
+  </div> <!--abrir menu-->
+  <div class="menu-mobile" id="menu-mobile">
+    <div class="btn-fechar">
+      <img src="img/3097110-removebg-preview.png" alt="">
+    </div> <!--botao fechar-->
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#Sobre">Sobre</a></li>  
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </div> <!---menu mobile-->
+  <div class="overlay-menu" id="overlay-menu">
+  </div>
+  <section class="inicio" id="inicio">
+    <div class="inicio-txt">
+      <h1>Rafael de <span>Mello</span></h1>
+      <h2>Desenvolvedor Web</h2>
+    </div>
+  </section>
+
+  <section class="sobre" id="Sobre">
+    <div class="txt-sobre">
+      <h2>Muito prazer<span>!</span></h2>
+      <p>Me chamo Marcus Rafael de Mello, sou estudante de Engenharia de Software pela UNOPAR. Tenho me dedicado ao
+        desenvolvimento web desde o final de 2024, adquirindo experiência com tecnologias como HTML5, CSS3, JavaScript,
+        React e sistemas CMS como o WordPress. Meu objetivo é me tornar um profissional Full Stack, por isso tenho
+        buscado projetos tanto de Front-End quanto de Back-End.
+      </p>
+    </div>
+    <div class="img-sobre">
+      <img src="img/Imagem do WhatsApp de 2025-03-03 à(s) 13.37.47_44542cce (2).jpg" alt="Perfil">
+    </div>
+  </section>
+
+
+  <section class="projetos" id="projetos">
+    <h2 class="projetos-titulo">Meus <span>projetos</span></h2>
+    <div class="projetos-caixa">
+
+      <div class="projetos-card">
+        <img class="img-projetos" src="img/Screenshot_6.png" alt="">
+        <h3 class="info-projetos">Portfólio VideoMaker</h3>
+        <p class="paragrafo-projetos">Site criado para portfólio, com o objetivo de informar sobre a experiência profissional do cliente e mostrar o conteúdo de seus trabalhos. Foram utilizados HTML5, CSS3 e JavaScript. O site é totalmente responsivo, podendo ser acessado por dispositivos móveis.<a class="link-git" href="https://github.com/RafaelDeMello/SiteVideoMaker" target="_blank"> Acesse o repositório clicando aqui!</a></p>
+      </div>
+
+      <div class="projetos-card">
+        <img src="" alt="">
+        <h3 class="info-projetos">lorem</h3>
+        <p class="paragrafo-projetos"></p>
+      </div>
+
+      <div class="projetos-card">
+        <img src="" alt="">
+        <h3 class="info-projetos">lorem</h3>
+        <p class="paragrafo-projetos"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contato" id="contato">
+    <h2 class="contato-titulo">Entre em contato<span>!</span></h2>
+    <form class="formulario-contato" id="contato" onsubmit="enviarWhats(event)">
+      <div class="grupo-form">
+        <input placeholder="Nome" class="campo-form" id="nome">
+      </div>
+      <div class="grupo-form">
+        <textarea class="campo-form" placeholder="Digite sua Mensagem" id="mensagem"></textarea>
+      </div>
+      <button type="submit" class="botao-form">Enviar WhatsApp</button>
+    </form>
+  </section>
+  <script>
+
+    function enviarWhats(event) {
+      event.preventDefault()
+      const nome = document.getElementById('nome').value;
+      const mensagem = document.getElementById('mensagem').value;
+      const telefone = '5555996471089';
+
+      const texto = `Olá! Me chamo ${nome}, ${mensagem}`
+      const msgFormatada = encodeURIComponent(texto)
+      const url = `https://wa.me/${telefone}?text=${msgFormatada}`
+
+      window.open(url, '_blank')
+    }
+  </script>
+  <footer class="rodape">
+    <div class="email-contato">
+      <a href="rafaeldemello2023@gmail.com">rafaeldemello2023@gmail.com</a>
+  </footer>
+
+</body>
+
+</html>
